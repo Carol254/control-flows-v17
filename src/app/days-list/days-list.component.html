@@ -1,0 +1,45 @@
+@switch (day) {
+    @case (0) {
+        Today is Sunday! You deserve a break
+    }
+    @case (1) {
+        Today is Monday, Hope you have productive Week
+    }
+    @case (2) {
+        Today is Tuesday, Smash your Goals :)
+    }
+    @case (3) {
+        Today is Wednesday, You're already half way through
+    }
+    @case (4) {
+        Today is Thursday, It's like Friday Lite
+    }
+    @case (5) {
+        Today is Friday, TGIF!!!
+    }@case (6)
+     {
+        Today is Saturday, Hurray!! :) 
+    }
+    @default {
+        Uh oh! Somethings wrong
+    }
+}
+
+
+<div [ngSwitch]="day">
+    <div *ngSwitchCase = 0>Today is Sunday! You deserve a break</div>
+
+    <div *ngSwitchCase = '1'><h3>Today is Monday, Hope you have productive Week</h3></div>
+    
+    <div *ngSwitchCase = '2'><h3>Today is Tuesday, Smash your Goals :)</h3></div>
+    
+    <div *ngSwitchCase = '3'><h3>Today is Wednesday, You're already half way through</h3></div>
+    
+    <div *ngSwitchCase = '4'><h3>Today is Thursday, It's like Friday Lite</h3></div>
+    
+    <div *ngSwitchCase = '5'><h3>Today is Friday, TGIF!!!</h3></div>
+    
+    <div *ngSwitchCase = '6'><h3>Today is Saturday, Hurray!! :) </h3></div>
+
+    <div *ngSwitchDefault>Uh oh! Somethings wrong</div>
+</div>
