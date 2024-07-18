@@ -1,21 +1,34 @@
-<div class="container">
-    @if (a > b) {
+<div class="mt-5">
+  <h2 class="text-center">If Statements</h2>
+  <h4>Example using &#64;if  and &#64;else if</h4>
+      @if (a > b) {
         <div>{{a}} is greater than {{b}}</div>
-      } @else if (b > a) {
+      } 
+      @else if (b > a) {
        <div>{{a}} is less than {{b}}</div> 
-      } @else {
+      } 
+      @else {
         <div>{{a}} is equal to {{b}}</div>
-      }
-    
-    <!-- *********************************************************** -->
-     
-      @if (users$ | async; as users) {
-      <p>Number of Users: {{ users.length }}</p> 
       }
 </div>
 
+<!-- ************************[Using if statements with async pipe]*********************************** -->
 
-<!-- <div *ngIf="users$ | async as users">
-    Number of users: {{ users.length }}
-  </div> -->
+<div class="mt-5">
+  <h4>Example using &#64;if  with async pipe</h4>
+   @if (users$ | async; as users) {
+    <p>Number of Users: {{ users.length }}</p> 
+  }
+</div>
+
+
+
+<!-- ************************************************************************************************************** -->
+<!-- <div class="mt-5">
+  <h4>Example using *NgIf</h4>
+  <div *ngIf="users$ | async as users">
+      Number of users: {{ users.length }}
+  </div>
+</div> -->
+
   
