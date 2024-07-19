@@ -70,8 +70,8 @@ export class CustomerListComponent {
     },
     {
       id: 8,
-      name: "George Haruni",
-      email: "george.haruni@gmail.com",
+      name: "George Aaron",
+      email: "george.aaron@gmail.com",
       phoneNumber: "0712345678",
       address: "606 Webuye,Kenya"
     },
@@ -83,7 +83,31 @@ export class CustomerListComponent {
       address: "707 Sabaki,Kenya."
     }
   ];
+  
+  // customers:Customer[] =[
+  //   {
+  //     id: ,
+  //     name: "",
+  //     email: "",
+  //     phoneNumber: "0712345678",
+  //     address: "123 Msa,Kenya"
+  //   }
+  // ];
+
+  results = [...this.customers];
+
+  constructor(){}
+
+  searchCustomer(event: any){
+    // console.log(event?.target.value);
+    const query = event.target.value.toLowerCase();
+    this.results = this.customers.filter((d)=> d.name.toLowerCase().indexOf(query) >-1);
+
+    
+  }
 }
+
+
 
 interface Customer{
   id: number;

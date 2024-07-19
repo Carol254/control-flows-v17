@@ -1,6 +1,16 @@
 <div>
   <h4 class="p-2 text-center">Example with &#64;for</h4>
   <h2 class="text-center">Customer List</h2>
+
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <form class="d-flex w-100 mb-2" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search" (input)="searchCustomer($event)">
+        <button class="btn btn-outline-success" type="submit" >Search</button>
+      </form>
+    </div>
+  </nav>
+
   <div class="table-container">
     <table>
       <tr>
@@ -10,14 +20,16 @@
         <th>Phone Number</th>
         <th>Address</th>
       </tr>
-      @for(customer of customers;track customer.id; let e = $even ,o = $odd ,idx = $index ){
+      @for(result of results;track result.id; let e = $even ,o = $odd ,idx = $index ){
         <tr [ngClass]="{beige: e, gray: o}">
-          <td>{{customer.id + 1}}</td>
-          <td>{{customer.name}}</td>
-          <td>{{customer.email}}</td>
-          <td>{{customer.phoneNumber}}</td>
-          <td>{{customer.address}}</td>
+          <td>{{result.id + 1}}</td>
+          <td>{{result.name}}</td>
+          <td>{{result.email}}</td>
+          <td>{{result.phoneNumber}}</td>
+          <td>{{result.address}}</td>
         </tr>
+      }@empty {
+          <tr> No data available</tr> 
       }
     </table>
   </div>
@@ -42,13 +54,14 @@
         <th>Address</th>
       </tr>
 
-        <tr *ngFor="let customer of customers; let i = index" [ngClass]="{'gray':i % 2 !== 0 , 'beige': i % 2 === 0} ">
-          <td>{{customer.id + 1}}</td>
-          <td>{{customer.name}}</td>
-          <td>{{customer.email}}</td>
-          <td>{{customer.phoneNumber}}</td>
-          <td>{{customer.address}}</td>
+        <tr *ngFor="let result of results; let i = index" [ngClass]="{'gray':i % 2 !== 0 , 'beige': i % 2 === 0} ">
+          <td>{{result.id + 1}}</td>
+          <td>{{result.name}}</td>
+          <td>{{result.email}}</td>
+          <td>{{result.phoneNumber}}</td>
+          <td>{{result.address}}</td>
         </tr>
+        <tr *ngIf="results.length === 0"> No results found</tr>
     </table>
   </div>
 </div> -->
